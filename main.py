@@ -28,3 +28,32 @@ print(party)
 
 #{'', 'National Greenbacker', 'Crawford Republican', 'Free Soil', 'Progressive Republican', 'Federalist', 'Conservative', 'Free Silver', 'Ind. Democrat', 'Law and Order', 'Populist', 'Silver Republican', 'American', 'Nullifier', 'Progressive', 'Pro-Administration', 'Ind. Republican-Democrat', 'Unconditional Unionist', 'Republican-Conservative', 'Socialist', 'Ind. Republican', 'Popular Democrat', 'American Labor', 'Democratic and Union Labor', 'Democratic Republican', 'Nonpartisan', 'Independent Democrat', 'Farmer-Labor', 'Anti Jackson', 'Union Democrat', 'Adams', 'Democrat-Liberal', 'Jackson Republican', 'Jackson', 'New Progressive', 'Union', 'Independent', 'Liberty', 'Democrat', 'Constitutional Unionist', 'Anti-Jacksonian', 'Readjuster Democrat', 'Readjuster', 'Anti Jacksonian', 'Prohibitionist', 'Coalitionist', 'Anti-Lecompton Democrat', 'Ind. Whig', 'Conservative Republican', 'Liberal Republican', 'Unknown', 'Jacksonian', 'Republican', 'Unionist', 'States Rights', 'Anti-Administration', 'Whig', 'Union Labor', 'Anti Masonic', 'Adams Democrat'}
 
+#GESTION DES ERREURS
+#Valeurs manquantes
+#Je remplace les valeurs manquante par aucun parti
+for row in l:
+  if row[6] == "":
+    row[6] = "no party"
+
+party =[]
+
+for row in l:
+  party.append(row[6])
+
+party = set(party[1:])
+print(party)
+
+#Valeurs manquantes 2
+# remplacer les genre manquant par M car il y a une tendance majoritairement masculine dans la liste.
+
+for row in l:
+  if row[3] == "":
+    row[3] = "M"
+
+gender =[]
+
+for row in l:
+  gender.append(row[3])
+
+gender = set(gender[1:])
+print(gender)
