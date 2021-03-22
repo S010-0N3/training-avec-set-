@@ -57,3 +57,30 @@ for row in l:
 
 gender = set(gender[1:])
 print(gender)
+
+#Analyse des années de naissance
+#recupere les annee de naissance :
+birth_year =[]
+
+for row in l:
+  list_row = []
+  list_row.append(row[2])
+  for x in list_row:
+    list_row= x.split("-")
+    birth_year.append(list_row[0])
+
+birth_year = set(birth_year)
+print(birth_year)
+
+
+# un code encore mieux avec moins de code
+birth_years2 = []
+
+for row in l:
+  birthday = row[2]
+  parts = birthday.split("-")
+  birth_years2.append(parts[0])
+
+birth_years2 = set(birth_years2)
+print(birth_years2)
+
